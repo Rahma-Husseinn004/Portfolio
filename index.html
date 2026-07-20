@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adira Voss — Law Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --beige:#F1E8D6;
+    --beige-deep:#E8DBBE;
+    --beige-line:#D3C29B;
+    --cream-card:#FAF5E9;
+    --navy:#152342;
+    --navy-soft:#3F4C6B;
+    --gold:#AD8636;
+    --gold-light:#C9A455;
+    --gold-pale:#DCC076;
+    --ink-soft:#6B6552;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  body{
+    background:var(--beige);
+    color:var(--navy);
+    font-family:'Jost', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .frame{
+    border:10px solid var(--beige-deep);
+    outline:1px solid var(--gold);
+    outline-offset:-16px;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  img{ display:block; width:100%; height:100%; object-fit:cover; }
+
+  .eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-size:12.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"§";
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px;
+    line-height:1;
+  }
+
+  .section{ padding:96px 8vw; }
+  @media(max-width:720px){ .section{ padding:72px 6vw; } }
+
+  h2.section-title{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:44px;
+    letter-spacing:.01em;
+    color:var(--navy);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--beige-deep);
+    padding:88px 8vw 80px;
+    position:relative;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:14px;
+    border:1px solid rgba(173,134,54,0.5);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.25fr 0.85fr;
+    gap:60px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  @media(max-width:820px){ .hero-grid{ grid-template-columns:1fr; text-align:center; } }
+
+  .hero-name{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    font-size:clamp(44px, 6vw, 72px);
+    line-height:1.05;
+    color:var(--navy);
+  }
+  .hero-name em{
+    font-style:italic;
+    color:var(--gold);
+    font-weight:400;
+  }
+  .hero-title{
+    margin-top:14px;
+    font-size:15px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--navy-soft);
+    font-weight:400;
+  }
+  .hero-rule{
+    width:72px; height:1px;
+    background:var(--gold);
+    margin:28px 0;
+  }
+  @media(max-width:820px){ .hero-rule{ margin:28px auto; } }
+
+  .contact-row{
+    display:flex; flex-wrap:wrap; gap:22px;
+    margin-bottom:26px;
+  }
+  @media(max-width:820px){ .contact-row{ justify-content:center; } }
+  .contact-item{
+    display:flex; align-items:center; gap:9px;
+    font-size:14.5px;
+    color:var(--navy);
+    letter-spacing:.01em;
+  }
+  .contact-item svg{ width:16px; height:16px; stroke:var(--gold); flex-shrink:0; }
+
+  .accounts-row{
+    display:flex; flex-wrap:wrap; gap:12px;
+  }
+  @media(max-width:820px){ .accounts-row{ justify-content:center; } }
+  .account-pill{
+    display:flex; align-items:center; gap:8px;
+    border:1px solid var(--beige-line);
+    background:var(--cream-card);
+    padding:9px 16px;
+    font-size:12.5px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--navy-soft);
+    transition:border-color .2s, color .2s;
+  }
+  .account-pill:hover{ border-color:var(--gold); color:var(--gold); }
+  .account-pill svg{ width:14px; height:14px; stroke:var(--gold); }
+
+  .photo-wrap{ display:flex; justify-content:center; position:relative; }
+  .photo-frame{
+    width:270px; height:270px;
+    border-radius:50%;
+    border:1px solid var(--gold);
+    padding:14px;
+    position:relative;
+  }
+  .photo-frame::before{
+    content:"";
+    position:absolute; inset:-9px;
+    border:1px solid rgba(173,134,54,0.4);
+    border-radius:50%;
+  }
+  .photo-inner{
+    width:100%; height:100%;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #1D3054, #101F38 75%);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+    position:relative;
+  }
+  .photo-inner .monogram{
+    font-family:'Cormorant Garamond', serif;
+    font-size:72px;
+    color:var(--gold-pale);
+    letter-spacing:.03em;
+  }
+  .photo-inner .photo-tag{
+    position:absolute; bottom:16px;
+    font-size:9.5px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:rgba(220,192,118,0.55);
+  }
+  /* to use a real photo: replace the .photo-inner content with <img src="your-photo.jpg"> */
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--beige); }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.4fr;
+    gap:70px;
+    margin-top:36px;
+    align-items:start;
+  }
+  @media(max-width:760px){ .about-grid{ grid-template-columns:1fr; gap:36px; } }
+
+  .about-quote{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:27px;
+    line-height:1.45;
+    color:var(--navy);
+    border-left:2px solid var(--gold);
+    padding-left:26px;
+  }
+  .about-quote span{ color:var(--gold); }
+
+  .about-body p{
+    font-size:16px;
+    line-height:1.85;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+  }
+  .about-body p:first-of-type::first-letter{
+    font-family:'Cormorant Garamond', serif;
+    font-size:56px;
+    font-weight:600;
+    color:var(--navy);
+    float:left;
+    line-height:.8;
+    margin:6px 8px 0 0;
+  }
+  .about-stats{
+    display:flex; gap:44px;
+    margin-top:34px;
+    padding-top:28px;
+    border-top:1px solid var(--beige-line);
+  }
+  .stat-num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:34px;
+    color:var(--navy);
+    font-weight:600;
+  }
+  .stat-label{
+    font-size:11.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .experience{ background:var(--beige-deep); }
+  .exp-list{
+    margin-top:46px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .exp-item{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:44px;
+    padding:38px 0;
+    border-top:1px solid var(--beige-line);
+    align-items:center;
+  }
+  .exp-item:last-child{ border-bottom:1px solid var(--beige-line); }
+  .exp-item.reverse{ grid-template-columns:1fr 220px; }
+  .exp-item.reverse .exp-photo{ order:2; }
+  .exp-item.reverse .exp-text{ order:1; }
+  @media(max-width:720px){
+    .exp-item, .exp-item.reverse{ grid-template-columns:1fr; gap:22px; }
+    .exp-item.reverse .exp-photo{ order:0; }
+    .exp-item.reverse .exp-text{ order:0; }
+  }
+
+  .exp-photo{
+    width:100%; aspect-ratio:1/1;
+    border:1px solid var(--gold);
+    padding:8px;
+    background:var(--cream-card);
+  }
+  .exp-photo-inner{
+    width:100%; height:100%;
+    background:linear-gradient(150deg, #1D3054, #101F38);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .exp-photo-inner svg{ width:40%; height:40%; stroke:var(--gold-pale); }
+
+  .exp-dates{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:8px;
+  }
+  .exp-role{
+    font-family:'Cormorant Garamond', serif;
+    font-size:26px; font-weight:500;
+    color:var(--navy);
+  }
+  .exp-org{
+    font-size:14px; color:var(--navy-soft);
+    margin-top:3px; margin-bottom:14px;
+    font-style:italic;
+    font-family:'Cormorant Garamond', serif;
+  }
+  .exp-desc{
+    font-size:15px; line-height:1.8;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+
+  /* ---------- CERTIFICATES ---------- */
+  .certificates{ background:var(--beige); }
+  .cert-grid{
+    margin-top:44px;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px;
+  }
+  @media(max-width:720px){ .cert-grid{ grid-template-columns:1fr; } }
+
+  .cert-card{
+    background:var(--cream-card);
+    border:1px solid var(--beige-line);
+    padding:32px 30px;
+    position:relative;
+    transition:border-color .2s, transform .2s;
+  }
+  .cert-card:hover{ border-color:var(--gold); transform:translateY(-3px); }
+  .cert-card::before{
+    content:"";
+    position:absolute; top:0; left:0;
+    width:34px; height:34px;
+    background:var(--navy);
+    clip-path:polygon(0 0, 100% 0, 0 100%);
+  }
+  .cert-icon{ width:34px; height:34px; margin-bottom:18px; }
+  .cert-icon svg{ width:100%; height:100%; stroke:var(--gold); }
+  .cert-name{
+    font-family:'Cormorant Garamond', serif;
+    font-size:21px; font-weight:600;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .cert-issuer{ font-size:13.5px; color:var(--ink-soft); }
+  .cert-date{
+    font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--gold);
+    margin-top:14px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--beige-deep);
+    color:var(--navy-soft);
+    padding:60px 8vw 44px;
+    text-align:center;
+    border-top:1px solid var(--beige-line);
+  }
+  .footer-mark{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:30px;
+    color:var(--navy);
+    margin-bottom:16px;
+  }
+  .footer-rule{ width:44px; height:1px; background:var(--gold); margin:0 auto 20px; }
+  footer .accounts-row{ justify-content:center; margin:24px 0 26px; }
+  footer p{ font-size:12px; letter-spacing:.05em; color:var(--ink-soft); }
+
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Portfolio</p>
+        <h1 class="hero-name">Adira <em>Voss</em></h1>
+        <p class="hero-title">J.D. Candidate, Class of 2027 &middot; Langford School of Law</p>
+        <div class="hero-rule"></div>
+
+        <div class="contact-row">
+          <span class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +1 (555) 019-2847
+          </span>
+          <span class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+            adira.voss@lawmail.edu
+          </span>
+        </div>
+
+        <div class="accounts-row">
+          <a class="account-pill" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2.5c1-1.8 2.6-2.9 5-2.9 4 0 5 2.6 5 6.2V21h-4v-6.5c0-1.6 0-3.6-2.2-3.6-2.3 0-2.6 1.8-2.6 3.5V21h-5z"/></svg>
+            LinkedIn
+          </a>
+          <a class="account-pill" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a class="account-pill" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4l16 16M20 4L4 20"/></svg>
+            X / Twitter
+          </a>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <div class="photo-inner">
+            <!-- replace this block with <img src="your-photo.jpg"> for a real headshot -->
+            <span class="monogram">A.V.</span>
+            <span class="photo-tag">Headshot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about section">
+    <p class="eyebrow">About me</p>
+    <h2 class="section-title">A student of the law, in practice as much as in principle.</h2>
+
+    <div class="about-grid">
+      <div class="about-quote">
+        “The law is reason, free from passion.” <span>— Aristotle</span>
+      </div>
+
+      <div class="about-body">
+        <p>I'm a third-year law student concentrating in constitutional and civil litigation, drawn to cases where careful argument meets real consequence. My coursework and clinics have given me a grounding in legal research, oral advocacy, and client counsel, but it's the hours spent preparing a brief until every citation earns its place that I find most satisfying.</p>
+        <p>Outside the classroom, I compete on the Moot Court team, contribute to the Law Review, and volunteer with a legal aid clinic serving low-income tenants. I'm looking toward a career in litigation, with a particular interest in appellate advocacy.</p>
+
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">3.87</div>
+            <div class="stat-label">GPA</div>
+          </div>
+          <div>
+            <div class="stat-num">150+</div>
+            <div class="stat-label">Pro bono hours</div>
+          </div>
+          <div>
+            <div class="stat-num">4</div>
+            <div class="stat-label">Moot court awards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience section">
+    <p class="eyebrow">Experience</p>
+    <h2 class="section-title">Where the coursework became casework.</h2>
+
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-photo">
+          <div class="exp-photo-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v2H4V7z"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8"/><path d="M3 21h18"/></svg>
+          </div>
+        </div>
+        <div class="exp-text">
+          <div class="exp-dates">Summer 2025</div>
+          <div class="exp-role">Judicial Extern</div>
+          <div class="exp-org">Superior Court of Alden County</div>
+          <p class="exp-desc">Drafted bench memoranda and proposed orders for civil motions, observed trial proceedings, and researched precedent on evidentiary disputes for a sitting judge.</p>
+        </div>
+      </div>
+
+      <div class="exp-item reverse">
+        <div class="exp-photo">
+          <div class="exp-photo-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v12H3z"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+          </div>
+        </div>
+        <div class="exp-text">
+          <div class="exp-dates">2024 &ndash; 2025</div>
+          <div class="exp-role">Legal Intern</div>
+          <div class="exp-org">Whitmore &amp; Cole LLP</div>
+          <p class="exp-desc">Supported the litigation team on discovery review and deposition preparation, and co-authored a memorandum on contract remedies later cited in settlement talks.</p>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-photo">
+          <div class="exp-photo-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M4 6h6l-3 6a3.5 3.5 0 0 0 7 0z"/><path d="M14 6h6l-3 6a3.5 3.5 0 0 0 7 0z" transform="translate(-6 0)"/><path d="M4 21h16"/><path d="M9 6H4M20 6h-5"/></svg>
+          </div>
+        </div>
+        <div class="exp-text">
+          <div class="exp-dates">2024 &ndash; Present</div>
+          <div class="exp-role">Vice Chair, Moot Court Team</div>
+          <div class="exp-org">Langford School of Law</div>
+          <p class="exp-desc">Coach incoming competitors on oral argument technique and brief structure; placed second nationally in the Regional Appellate Advocacy Competition.</p>
+        </div>
+      </div>
+
+      <div class="exp-item reverse">
+        <div class="exp-photo">
+          <div class="exp-photo-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+        </div>
+        <div class="exp-text">
+          <div class="exp-dates">2023 &ndash; 2024</div>
+          <div class="exp-role">Research Assistant</div>
+          <div class="exp-org">Prof. Helena Ainsworth &middot; Constitutional Law</div>
+          <p class="exp-desc">Compiled comparative research on First Amendment jurisprudence for a forthcoming law review article, cross-referencing circuit splits across 60+ opinions.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section class="certificates section">
+    <p class="eyebrow">Certificates &amp; honors</p>
+    <h2 class="section-title">Recognition earned along the way.</h2>
+
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
+        </div>
+        <div class="cert-name">Certificate in International Arbitration</div>
+        <div class="cert-issuer">Institute for Global Dispute Resolution</div>
+        <div class="cert-date">Spring 2025</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M12 3l8 4v2H4V7z"/><path d="M5 10v8M19 10v8M3 21h18"/></svg>
+        </div>
+        <div class="cert-name">Trial Advocacy Certificate</div>
+        <div class="cert-issuer">National Trial Advocacy Program</div>
+        <div class="cert-date">Fall 2024</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <div class="cert-name">Legal Research &amp; Writing Excellence Award</div>
+        <div class="cert-issuer">Langford School of Law</div>
+        <div class="cert-date">2024</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="cert-name">Pro Bono Service Recognition</div>
+        <div class="cert-issuer">State Bar Association &middot; 150+ hours</div>
+        <div class="cert-date">2025</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-mark">Adira Voss</div>
+    <div class="footer-rule"></div>
+    <div class="accounts-row">
+      <a class="account-pill" href="#">LinkedIn</a>
+      <a class="account-pill" href="#">Instagram</a>
+      <a class="account-pill" href="#">Email</a>
+    </div>
+    <p>&copy; 2026 Adira Voss. Portfolio for academic and professional reference.</p>
+  </footer>
+
+</div>
+</body>
+</html>
