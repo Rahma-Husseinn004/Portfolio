@@ -357,54 +357,7 @@
     gap:28px;
   }
   @media(max-width:720px){ .cert-grid{ grid-template-columns:1fr; } }
-  .cert-card{
-    width:100%;
-    height:300px;
-    perspective:1000px;
-    cursor:pointer;
-}
 
-.cert-card-inner{
-    position:relative;
-    width:100%;
-    height:100%;
-    transition:transform .8s;
-    transform-style:preserve-3d;
-}
-
-.cert-card.flipped .cert-card-inner{
-    transform:rotateY(180deg);
-}
-
-.cert-front,
-.cert-back{
-    position:absolute;
-    width:100%;
-    height:100%;
-    backface-visibility:hidden;
-
-    border:1px solid var(--beige-line);
-    background:var(--cream-card);
-    padding:30px;
-}
-
-.cert-back{
-    transform:rotateY(180deg);
-    padding:0;
-}
-
-.cert-back img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-  <script>
-document.querySelectorAll('.cert-card').forEach(card => {
-    card.addEventListener('click', () => {
-        card.classList.toggle('flipped');
-    });
-});
-</script>
   .cert-card{
     background:var(--cream-card);
     border:1px solid var(--beige-line);
@@ -650,22 +603,13 @@ document.querySelectorAll('.cert-card').forEach(card => {
     <div class="cert-grid">
 
       <div class="cert-card">
-    <div class="cert-card-inner">
-
-        <!-- Front -->
-        <div class="cert-front">
-            <div class="cert-name">Certificate in Intellectual Property</div>
-            <div class="cert-issuer">World Intellectual Property Organization (WIPO)</div>
-            <div class="cert-date">February – March 2025</div>
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
         </div>
-
-        <!-- Back -->
-        <div class="cert-back">
-            <img src="/image/WIPO Certificate.jpg" alt="Certificate">
-        </div>
-
-    </div>
-</div>
+        <div class="cert-name">Certificate in Intellectual Property</div>
+        <div class="cert-issuer">World Intellectual Property Organization (WIPO)</div>
+        <div class="cert-date">February – March 2025</div>
+      </div>
 
       <div class="cert-card">
         <div class="cert-icon">
