@@ -243,7 +243,50 @@
     color:var(--ink-soft);
     margin-top:4px;
   }
+  /* ---------- VISION & MISSION ---------- */
+.vision{
+    background:var(--cream-card);
+}
 
+.vm-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:32px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+    .vm-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+.vm-card{
+    background:var(--beige);
+    border:1px solid var(--beige-line);
+    padding:38px 34px;
+    transition:.3s ease;
+}
+
+.vm-card:hover{
+    border-color:var(--gold);
+    transform:translateY(-4px);
+}
+
+.vm-card h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px;
+    color:var(--navy);
+    margin-bottom:18px;
+}
+
+.vm-card p{
+    color:var(--ink-soft);
+    line-height:1.9;
+    font-size:16px;
+}
+
+  
   /* ---------- EXPERIENCE ---------- */
   .experience{ background:var(--beige-deep); }
   .exp-list{
@@ -374,34 +417,27 @@
     <div class="hero-grid">
       <div>
         <p class="eyebrow">Portfolio</p>
-        <h1 class="hero-name">Adira <em>Voss</em></h1>
-        <p class="hero-title">J.D. Candidate, Class of 2027 &middot; Langford School of Law</p>
+        <h1 class="hero-name">Mahmoud <em>Sheimy</em></h1>
+        <p class="hero-title">Intellectual Property Associate · Litigation & Arbitration</p>
         <div class="hero-rule"></div>
 
         <div class="contact-row">
           <span class="contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +1 (555) 019-2847
+            +20 109 333 3283
           </span>
           <span class="contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
-            adira.voss@lawmail.edu
+            mhmoudsheimy@outlook.com
           </span>
         </div>
 
         <div class="accounts-row">
-          <a class="account-pill" href="#">
+          <a class="account-pill" href="https://www.linkedin.com/in/mahmoud-sheimy-398b69268/">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2.5c1-1.8 2.6-2.9 5-2.9 4 0 5 2.6 5 6.2V21h-4v-6.5c0-1.6 0-3.6-2.2-3.6-2.3 0-2.6 1.8-2.6 3.5V21h-5z"/></svg>
             LinkedIn
           </a>
-          <a class="account-pill" href="#">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>
-            Instagram
-          </a>
-          <a class="account-pill" href="#">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4l16 16M20 4L4 20"/></svg>
-            X / Twitter
-          </a>
+          
         </div>
       </div>
 
@@ -420,7 +456,7 @@
   <!-- ABOUT -->
   <section class="about section">
     <p class="eyebrow">About me</p>
-    <h2 class="section-title">A student of the law, in practice as much as in principle.</h2>
+    <h2 class="section-title">Dedicated to protecting innovation through intellectual property, litigation, and arbitration.</h2>
 
     <div class="about-grid">
       <div class="about-quote">
@@ -428,27 +464,58 @@
       </div>
 
       <div class="about-body">
-        <p>I'm a third-year law student concentrating in constitutional and civil litigation, drawn to cases where careful argument meets real consequence. My coursework and clinics have given me a grounding in legal research, oral advocacy, and client counsel, but it's the hours spent preparing a brief until every citation earns its place that I find most satisfying.</p>
-        <p>Outside the classroom, I compete on the Moot Court team, contribute to the Law Review, and volunteer with a legal aid clinic serving low-income tenants. I'm looking toward a career in litigation, with a particular interest in appellate advocacy.</p>
+        <p>I am an Intellectual Property Associate with more than two years of experience handling intellectual property, litigation, and arbitration matters. My practice includes trademark and copyright protection, commercial disputes, legal research, and drafting persuasive legal memoranda and pleadings. I strive to deliver practical, well-reasoned legal solutions tailored to each client's objectives.</p>
+        <p>Alongside my legal practice, I am pursuing a Master's in Investment Arbitration while actively contributing to moot court coaching, arbitration research, and professional development. I am committed to continuous learning and to providing high-quality legal representation with integrity, precision, and professionalism.</p>
 
         <div class="about-stats">
           <div>
-            <div class="stat-num">3.87</div>
-            <div class="stat-label">GPA</div>
+            <div class="stat-num">2+</div>
+            <div class="stat-label">Years of Experience</div>
           </div>
           <div>
-            <div class="stat-num">150+</div>
-            <div class="stat-label">Pro bono hours</div>
+            <div class="stat-num">100+</div>
+            <div class="stat-label">International Trademarks Registered</div>
           </div>
           <div>
-            <div class="stat-num">4</div>
-            <div class="stat-label">Moot court awards</div>
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Professional Certificates</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+<!-- VISION & MISSION -->
+<section class="vision section">
+    <p class="eyebrow">Purpose</p>
+    <h2 class="section-title">Vision & Mission</h2>
 
+    <div class="vm-grid">
+
+        <div class="vm-card">
+            <h3>Vision</h3>
+            <p>
+                To become a leading legal professional in intellectual
+                 property and dispute resolution, recognized for integrity,
+                innovation, and excellence in protecting creative and
+                commercial rights while contributing to the development of
+                legal practice both nationally and internationally.
+            </p>
+        </div>
+
+        <div class="vm-card">
+            <h3>Mission</h3>
+            <p>
+                To provide clients with strategic, accurate, and practical
+                legal solutions through continuous learning, meticulous legal
+                analysis, and ethical advocacy. By combining litigation
+                experience with advanced legal research, the goal is to
+                safeguard clients' interests while promoting fairness,
+                professionalism, and respect for the rule of law.
+            </p>
+        </div>
+
+    </div>
+</section>
   <!-- EXPERIENCE -->
   <section class="experience section">
     <p class="eyebrow">Experience</p>
@@ -463,10 +530,14 @@
           </div>
         </div>
         <div class="exp-text">
-          <div class="exp-dates">Summer 2025</div>
-          <div class="exp-role">Judicial Extern</div>
-          <div class="exp-org">Superior Court of Alden County</div>
-          <p class="exp-desc">Drafted bench memoranda and proposed orders for civil motions, observed trial proceedings, and researched precedent on evidentiary disputes for a sitting judge.</p>
+          <div class="exp-dates">January 2025 – Present</div>
+          <div class="exp-role">Loutfi Law Firm</div>
+          <div class="exp-org">Associate</div>
+          <p class="exp-desc">Represent clients in intellectual property, civil, commercial, and administrative litigation.
+        <p class="exp-desc">Handle copyright, trademark, and contractual disputes from legal assessment through resolution.
+        <p class="exp-desc">Draft legal memoranda, pleadings, and appellate submissions.
+        <p class="exp-desc">Conduct legal research and develop litigation strategies for high-value cases.
+        <p class="exp-desc">Successfully represented clients in multi-million EGP intellectual property and commercial disputes.</p>
         </div>
       </div>
 
@@ -477,10 +548,13 @@
           </div>
         </div>
         <div class="exp-text">
-          <div class="exp-dates">2024 &ndash; 2025</div>
-          <div class="exp-role">Legal Intern</div>
-          <div class="exp-org">Whitmore &amp; Cole LLP</div>
-          <p class="exp-desc">Supported the litigation team on discovery review and deposition preparation, and co-authored a memorandum on contract remedies later cited in settlement talks.</p>
+          <div class="exp-dates">June 2024 – January 2025</div>
+          <div class="exp-role">AIP@T Intellectual Property Company</div>
+          <div class="exp-org">Junior Associate – Intellectual Property</div>
+          <p class="exp-desc">Managed trademark registration and renewal processes.
+          <p class="exp-desc">Advised clients on trademark protection and enforcement.
+          <p class="exp-desc">Successfully handled registration of more than 100 international trademarks.
+          <p class="exp-desc">Provided legal opinions on intellectual property matters..</p>
         </div>
       </div>
 
@@ -491,10 +565,14 @@
           </div>
         </div>
         <div class="exp-text">
-          <div class="exp-dates">2024 &ndash; Present</div>
-          <div class="exp-role">Vice Chair, Moot Court Team</div>
-          <div class="exp-org">Langford School of Law</div>
-          <p class="exp-desc">Coach incoming competitors on oral argument technique and brief structure; placed second nationally in the Regional Appellate Advocacy Competition.</p>
+          <div class="exp-dates">January 2024 – June 2024</div>
+          <div class="exp-role">El-Saadawy Law Office</div>
+          <div class="exp-org">Legal Intern (Litigation Department)</div>
+          <p class="exp-desc">Assisted senior lawyers in litigation matters.
+          <p class="exp-desc">Prepared lawsuits, legal memoranda, and defense submissions.
+          <p class="exp-desc">Conducted legal research and case analysis.
+          <p class="exp-desc">Supported case management and attended court hearings.
+          <p class="exp-desc">Performed legal procedures before courts and government authorities.</p>
         </div>
       </div>
 
@@ -505,10 +583,12 @@
           </div>
         </div>
         <div class="exp-text">
-          <div class="exp-dates">2023 &ndash; 2024</div>
-          <div class="exp-role">Research Assistant</div>
-          <div class="exp-org">Prof. Helena Ainsworth &middot; Constitutional Law</div>
-          <p class="exp-desc">Compiled comparative research on First Amendment jurisprudence for a forthcoming law review article, cross-referencing circuit splits across 60+ opinions.</p>
+          <div class="exp-role">COMPETITIONS & RESEARCH ACTIVITIES</div>
+          <p class="exp-desc">Authored a series of legal research papers on arbitration law, covering the following topics: the autonomy of the arbitration clause, arbitration procedures, electronic arbitration, and arbitral awards.
+          <p class="exp-desc">Coach | IP Moot Court Competition — Organized by Challenge Law Firm, British University in Egypt (Present)
+          <p class="exp-desc">Coach | United Nations Human Rights Moot Court Competition — Port Said University Team.
+          <p class="exp-desc">Selected Arbitrator in the Saudi Commercial Arbitration Competition.
+          <p class="exp-desc">Participant in the Adsero Law Firm Legal Article Competition on Egypt’s New Rental Law and Practical Challenges.</p>
         </div>
       </div>
 
@@ -526,36 +606,63 @@
         <div class="cert-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
         </div>
-        <div class="cert-name">Certificate in International Arbitration</div>
-        <div class="cert-issuer">Institute for Global Dispute Resolution</div>
-        <div class="cert-date">Spring 2025</div>
+        <div class="cert-name">Certificate in Intellectual Property</div>
+        <div class="cert-issuer">World Intellectual Property Organization (WIPO)</div>
+        <div class="cert-date">February – March 2025</div>
       </div>
 
       <div class="cert-card">
         <div class="cert-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M12 3l8 4v2H4V7z"/><path d="M5 10v8M19 10v8M3 21h18"/></svg>
         </div>
-        <div class="cert-name">Trial Advocacy Certificate</div>
-        <div class="cert-issuer">National Trial Advocacy Program</div>
-        <div class="cert-date">Fall 2024</div>
+        <div class="cert-name">Introductory Course on Patents</div>
+        <div class="cert-issuer">World Intellectual Property Organization (WIPO)</div>
+        <div class="cert-date">September 2025</div>
       </div>
 
       <div class="cert-card">
         <div class="cert-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         </div>
-        <div class="cert-name">Legal Research &amp; Writing Excellence Award</div>
-        <div class="cert-issuer">Langford School of Law</div>
-        <div class="cert-date">2024</div>
+        <div class="cert-name">Intellectual Property Arbitration Disputes</div>
+        <div class="cert-issuer">SIPA</div>
+        <div class="cert-date">October 2025</div>
       </div>
 
       <div class="cert-card">
         <div class="cert-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
-        <div class="cert-name">Pro Bono Service Recognition</div>
-        <div class="cert-issuer">State Bar Association &middot; 150+ hours</div>
-        <div class="cert-date">2025</div>
+        <div class="cert-name">Arbitration from A to Z</div>
+        <div class="cert-issuer">Arbitration Club, College of Law, American University of Iraq – Baghdad (AUIB)</div>
+        <div class="cert-date">October 2024</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="cert-name">General Legal English Course</div>
+        <div class="cert-issuer">The Law Clinic</div>
+        <div class="cert-date">March – April 2025</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="cert-name">Digital Transformation Certificate</div>
+        <div class="cert-issuer">Minya University</div>
+        <div class="cert-date">October 2024</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="cert-name">International Computer Driving License (ICDL)</div>
+        <div class="cert-issuer">Minya University</div>
+        <div class="cert-date">July – September 2022</div>
       </div>
 
     </div>
@@ -563,14 +670,13 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-mark">Adira Voss</div>
+    <div class="footer-mark">Mahmoud Sheimy</div>
     <div class="footer-rule"></div>
     <div class="accounts-row">
-      <a class="account-pill" href="#">LinkedIn</a>
-      <a class="account-pill" href="#">Instagram</a>
-      <a class="account-pill" href="#">Email</a>
+      <a class="account-pill" href="https://www.linkedin.com/in/mahmoud-sheimy-398b69268/">LinkedIn</a>
+      <a class="account-pill" href="mhmoudsheimy@outlook.com">Email</a>
     </div>
-    <p>&copy; 2026 Adira Voss. Portfolio for academic and professional reference.</p>
+    
   </footer>
 
 </div>
