@@ -349,68 +349,113 @@
   }
 
   /* ---------- CERTIFICATES ---------- */
-  .certificates{ background:var(--beige); }
-  .cert-grid{
+  /* ---------- CERTIFICATES ---------- */
+
+.certificates{
+    background:var(--beige);
+}
+
+.cert-grid{
     margin-top:44px;
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:28px;
-  }
-  @media(max-width:720px){ .cert-grid{ grid-template-columns:1fr; } }
+}
 
-  .cert-card{
+@media(max-width:720px){
+    .cert-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+.cert-card{
+    width:100%;
+    height:340px;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+.cert-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform .8s;
+    transform-style:preserve-3d;
+}
+
+.cert-card.flipped .cert-inner{
+    transform:rotateY(180deg);
+}
+
+.cert-front,
+.cert-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+
     background:var(--cream-card);
     border:1px solid var(--beige-line);
-    padding:32px 30px;
-    position:relative;
-    transition:border-color .2s, transform .2s;
-  }
-  .cert-card:hover{ border-color:var(--gold); transform:translateY(-3px); }
-  .cert-card::before{
-    content:"";
-    position:absolute; top:0; left:0;
-    width:34px; height:34px;
-    background:var(--navy);
-    clip-path:polygon(0 0, 100% 0, 0 100%);
-  }
-  .cert-icon{ width:34px; height:34px; margin-bottom:18px; }
-  .cert-icon svg{ width:100%; height:100%; stroke:var(--gold); }
-  .cert-name{
-    font-family:'Cormorant Garamond', serif;
-    font-size:21px; font-weight:600;
-    color:var(--navy);
-    margin-bottom:6px;
-  }
-  .cert-issuer{ font-size:13.5px; color:var(--ink-soft); }
-  .cert-date{
-    font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--gold);
-    margin-top:14px;
-  }
-
-  .cert-link{
-    text-decoration:none;
-    color:inherit;
-    display:block;
-}
-
-.cert-image{
-    width:100%;
-    height:180px;
+    border-radius:12px;
     overflow:hidden;
-    border-radius:8px;
-    margin-bottom:18px;
 }
 
-.cert-image img{
+.cert-front{
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.cert-front::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:34px;
+    height:34px;
+    background:var(--navy);
+    clip-path:polygon(0 0,100% 0,0 100%);
+}
+
+.cert-back{
+    transform:rotateY(180deg);
+}
+
+.cert-back img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:transform .3s ease;
 }
 
-.cert-card:hover .cert-image img{
-    transform:scale(1.05);
+.cert-name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    font-weight:600;
+    color:var(--navy);
+    margin-bottom:8px;
+}
+
+.cert-issuer{
+    font-size:14px;
+    color:var(--ink-soft);
+}
+
+.cert-date{
+    margin-top:16px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--gold);
+}
+
+.flip-text{
+    margin-top:22px;
+    font-size:13px;
+    color:var(--gold);
+    font-style:italic;
 }
 
   /* ---------- FOOTER ---------- */
@@ -624,31 +669,45 @@
   <section class="certificates section">
     <p class="eyebrow">Certificates &amp; honors</p>
     <h2 class="section-title">Recognition earned along the way.</h2>
+<div class="cert-grid">
 
-    <div class="cert-grid">
+    <!-- Certificate 1 -->
+    <div class="cert-card" onclick="this.classList.toggle('flipped')">
 
-      <a href="image/WIPO Certificate.jpg" target="_blank" class="cert-link">
-  <div class="cert-card">
+      <div class="cert-inner">
 
-    <div class="cert-image">
-      <img src="image/WIPO Certificate.jpg"
-           alt="Certificate in Intellectual Property">
-    </div>
+        <!-- Front -->
+        <div class="cert-front">
 
-    <div class="cert-name">
-      Certificate in Intellectual Property
-    </div>
+          <div class="cert-name">
+            Certificate in Intellectual Property
+          </div>
 
-    <div class="cert-issuer">
-      World Intellectual Property Organization (WIPO)
-    </div>
+          <div class="cert-issuer">
+            World Intellectual Property Organization (WIPO)
+          </div>
 
-    <div class="cert-date">
-      February – March 2025
+          <div class="cert-date">
+            February – March 2025
+          </div>
+
+          <div class="flip-text">
+            Click to view certificate
+          </div>
+
+        </div>
+
+        <!-- Back -->
+        <div class="cert-back">
+          <img src="image/WIPO Certificate.jpg"
+               alt="Certificate in Intellectual Property">
+        </div>
+
+      </div>
+
     </div>
 
   </div>
-</a>
 
       <div class="cert-card">
         <div class="cert-icon">
